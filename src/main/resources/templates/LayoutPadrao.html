@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html
+  lang="pr-br"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cobrança</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+  </head>
+
+  <body>
+    
+    <div th:replace="~{Cabecalho :: Cabecalho}"></div>
+
+
+    <!-- Seção usada para inserir contéúdo na pesquisa de título  -->
+    <section layout:fragment="conteudo">
+      <p>Conteúdo principal</p>
+    </section>
+
+    <script src="/js/jquery-2.1.4.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
