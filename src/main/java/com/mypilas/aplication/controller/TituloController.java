@@ -25,6 +25,7 @@ public class TituloController {
   @RequestMapping("/novo")
   public ModelAndView novo() {
     ModelAndView mv = new ModelAndView("CadastroTitulo");
+    mv.addObject(new Titulo());
     return mv;
   }
 
