@@ -14,6 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.mypilas.aplication.model.StatusTitulo;
 import com.mypilas.aplication.model.Titulo;
 import com.mypilas.aplication.repository.TitulosRepository;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 @RequestMapping("/titulos")
@@ -64,5 +67,11 @@ public class TituloController {
   public List<StatusTitulo> todosStatusTitulo() {
     return Arrays.asList(StatusTitulo.values());
   }
+
+  @GetMapping("/login")
+  public String login() {
+      return "Login";
+  }
+  
   
 }
