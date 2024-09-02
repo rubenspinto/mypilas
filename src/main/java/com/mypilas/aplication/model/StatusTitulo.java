@@ -7,7 +7,7 @@ public enum StatusTitulo {
   PENDENTE("Pendente"),
   RECEBIDO("Recebido");
 
-  private String descricao;
+  private final String descricao;
 
   StatusTitulo(String descricao) {
     this.descricao = descricao;
