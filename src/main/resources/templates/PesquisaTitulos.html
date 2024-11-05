@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html
   lang="pt-br"
-  xmlns="http://www.w3.org/1999/xhtml"
   xmlns:th="http://www.thymeleaf.org"
   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
   layout:decorate="~{LayoutPadrao}"
@@ -11,6 +10,7 @@
   </head>
 
   <section layout:fragment="conteudo">
+    <div th:replace="~{MensagemGeral}"></div>
     <div class="panel panel-default">
       <div class="panel-heading">
         <div class="clearfix">
@@ -52,10 +52,15 @@
                 <a
                   class="btn btn-link btn-xs"
                   th:href="@{/titulos/{codigo}(codigo=${titulo.codigo})}"
-                >
+                  title="Editar" rel="tooltip" data-placement="top">
                   <span class="glyphicon glyphicon-pencil"></span>
                 </a>
-                <a href="" class="btn btn-link btn-xs">
+                <a
+                  class="btn btn-link btn-xs"
+                  data-toggle="modal"
+                  data-target="#confirmacaoExclusaoModal"
+                  th:attr="data-codigo=${titulo.codigo}, data-descricao=${titulo.descricao}"
+                  title="Excluir" rel="tooltip" data-placement="top">
                   <span class="glyphicon glyphicon-remove"></span>
                 </a>
               </td>
@@ -68,6 +73,7 @@
           </tbody>
         </table>
       </div>
+      <div th:replace="~{DialogoConfirmacaoExclusao}"></div>
     </div>
   </section>
 </html>

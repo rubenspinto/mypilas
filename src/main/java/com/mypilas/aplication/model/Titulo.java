@@ -43,7 +43,7 @@ public class Titulo {
 
   @NotNull(message = "Date de vencimento é obrigatória")
   @DateTimeFormat(pattern = "dd/MM/yyyy")
-  @Temporal(TemporalType.DATE)
+  @Temporal(value = TemporalType.DATE)
   private Date dataVencimento;
 
   @NotNull(message = "Valor é obrigatório")
