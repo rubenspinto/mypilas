@@ -61,6 +61,7 @@
                 th:field="*{dataVencimento}"
                 data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-language="pt-BR"
                 data-date-autoclose="true" data-date-today-highlight="true"
+                autocomplete="off"
               />
             </div>
           </div>
@@ -72,7 +73,7 @@
             <div class="col-sm-2">
               <input
                 type="text"
-                class="form-control"
+                class="form-control js-currency"
                 id="valor"
                 th:field="*{valor}"
               />
@@ -88,6 +89,7 @@
                   th:each="status : ${todosStatusTitulo}"
                   th:value="${status}"
                   th:text="${status.descricao}"
+                  th:field="*{status}"
                 ></option>
               </select>
             </div>
