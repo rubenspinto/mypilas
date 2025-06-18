@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html
+  lang="pt-br"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{LayoutPadrao}"
+>
+  <head>
+    <title>cobrança</title>
+    <style>
+    .welcome-container {
+      margin-top: 100px;
+      text-align: center;
+    }
+
+    .welcome-box {
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+    }
+
+    </style>
+  </head>
+
+  <section layout:fragment="conteudo">
+    <!-- Tela de boas-vindas -->
+    <div class="container welcome-container">
+      <div class="welcome-box">
+        <h1>Bem-vindo ao Sistema de Finanças</h1>
+        <p>
+          Gerencie suas receitas, despesas e controle financeiro com facilidade.
+        </p>
+        <br />
+        <a th:href="@{/titulos/login}" class="btn btn-primary btn-lg"
+          >Entrar no Sistema</a
+        >
+      </div>
+    </div>
+  </section>
+</html>

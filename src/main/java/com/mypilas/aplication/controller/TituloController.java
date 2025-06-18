@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mypilas.aplication.model.StatusTitulo;
 import com.mypilas.aplication.model.Titulo;
+import com.mypilas.aplication.repository.TituloFilter;
 import com.mypilas.aplication.repository.TitulosRepository;
 import com.mypilas.aplication.service.CadastroTituloService;
 
@@ -40,11 +41,6 @@ public class TituloController {
     ModelAndView mv = new ModelAndView(CADASTRO_VIEW);
     mv.addObject(new Titulo());
     return mv;
-  }
-
-  @RequestMapping("/login")
-  public String requestMethodName() {
-    return "Login";
   }
 
   /**
@@ -75,9 +71,11 @@ public class TituloController {
   }
 
   @RequestMapping
-  public ModelAndView pesquisar() {
+  public ModelAndView pesquisar(@ModelAttribute("filtro") TituloFilter filtro) {
 
-    List<Titulo> todosTitulos = titulosRepository.findAll();
+    String descricao = filtro.getDescricao() == null ? "" : filtro.getDescricao();
+    List<Titulo> todosTitulos = titulosRepository.findByDescricaoContaining(descricao);
+
     var mv = new ModelAndView("PesquisaTitulos");
     mv.addObject("titulos", todosTitulos);
     return mv;
@@ -112,7 +110,16 @@ public class TituloController {
 
   @GetMapping("/login")
   public String login() {
-    return "Cadastro";
+    return "Login";
   }
 
+  @RequestMapping("/home")
+  public String home() {
+    return "/index";
+  }
+
+  @GetMapping("/cadastro")
+  public String cadastro() {
+    return "Cadastro";
+  }
 }
