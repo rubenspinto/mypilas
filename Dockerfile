@@ -1,5 +1,5 @@
 # define a imagem base do java
-FROM openjdk:17-jdk-alpine3.19
+FROM eclipse-temurin:17-jdk-alpine
 
 RUN apk update && apk upgrade --no-cache
 
@@ -7,7 +7,7 @@ RUN apk update && apk upgrade --no-cache
 VOLUME /tmp
 
 # copia arquivo jar do projeto para dentro de container
-COPY target/mypilas-0.0.1-SNAPSHOT.jar app.jar
+COPY target/mypilas.jar app.jar
 
 # define o comando para executar o projeto
 ENTRYPOINT ["java","-jar","/app.jar"]

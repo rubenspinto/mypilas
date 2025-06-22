@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>mypilas</name>
 	<!-- Definir o packaging como war -->
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<description>Projeto para cobrança de boletos</description>
 	<properties>
 		<java.version>17</java.version>

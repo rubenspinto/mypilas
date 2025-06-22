@@ -29,7 +29,7 @@
         </div>
 
         <div class="panel-body">
-          <input type="hidden" th:field="${titulo.codigo}" />
+          <input type="hidden" th:field="*{codigo}" />
           <div
             class="form-group"
             th:classappend="${#fields.hasErrors('descricao')} ? has-error"
@@ -59,8 +59,11 @@
                 class="form-control"
                 id="dataVencimento"
                 th:field="*{dataVencimento}"
-                data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-language="pt-BR"
-                data-date-autoclose="true" data-date-today-highlight="true"
+                data-provide="datepicker"
+                data-date-format="dd/mm/yyyy"
+                data-date-language="pt-BR"
+                data-date-autoclose="true"
+                data-date-today-highlight="true"
                 autocomplete="off"
               />
             </div>
@@ -84,12 +87,11 @@
               >Status</label
             >
             <div class="col-sm-2">
-              <select class="form-control" name="status">
+              <select class="form-control" name="status" th:field="*{status}">
                 <option
                   th:each="status : ${todosStatusTitulo}"
                   th:value="${status}"
                   th:text="${status.descricao}"
-                  th:field="*{status}"
                 ></option>
               </select>
             </div>
